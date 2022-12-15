@@ -9,9 +9,12 @@ sonobuoy-config:
   driver: Job
   plugin-name: mixed-workload-e2e
   result-format: junit
-  source_url: https://raw.githubusercontent.com/phillipsj/my-sonobuoy-plugins/main/mixed-workload-e2e/mixed-workload-e2e.yaml
+  source_url: https://raw.githubusercontent.com/VestigeJ/my-sonobuoy-plugins/main/mixed-workload-e2e/mixed-workload-e2e.yaml
   description: A plugin for deploying a mixed OS workload for ensuring that your image deploys correctly.
 spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 3000
   image: phillipsj/mixed-workload-e2e:latest
   name: plugin
   resources: {}
